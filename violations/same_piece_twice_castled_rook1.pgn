@@ -1,5 +1,4 @@
-[Event "You cannot move the same piece twice in one turn, including the rook after castling."]
-[Round "Kingside white castling"]
+[Event "The same piece cannot move twice in one turn, including the rook after castling (white kingside)."]
 
 1.e4       Nc6,d5 
 2.Nf3,Be2  e6,Nf6

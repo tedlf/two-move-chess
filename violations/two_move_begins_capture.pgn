@@ -1,4 +1,4 @@
-[Event "A capture cannot occur on the first move of a two move turn"]
+[Event "A capture cannot occur on the first move of a two move turn."]
 
 1.d4        c5,Nc6
 2.dxc5,Nf3  *

@@ -1,3 +1,3 @@
-[Event "You cannot move the same piece twice in one turn"]
+[Event "The same piece cannot move twice in one turn."]
 
 1.e4 Nc6,Ne5  *
