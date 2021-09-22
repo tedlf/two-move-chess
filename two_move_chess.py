@@ -60,7 +60,7 @@ class TwoMoveChessBoard(chess.Board):
     This class extends chess.Board for the purpose of verifying games of Two Move Chess.
     """
 
-    def __init__(self, fen=None, debug=False, html_output=False):
+    def __init__(self, fen=None, debug=False, print_unicode=False, html_output=False):
         if fen is None:
             super().__init__()
             self.last_move_type = MoveType.START_OF_GAME
@@ -69,6 +69,7 @@ class TwoMoveChessBoard(chess.Board):
             self.last_move_type = MoveType.DOUBLE_MOVE
         self.piece_count = []
         self.debug = debug
+        self.print_unicode = print_unicode
         self.html_output = html_output
 
     def push_san(self, move, move_type):
@@ -214,10 +215,12 @@ def print_board(board, output_filename=None):
     elif not board.html_output:
         if board.debug and not board.turn:
             print()
-        # TODO: Restore before posting on Github
-        # print(board)
-        # Print a unicode board instead (inverted for a dark terminal)
-        print(board.unicode(invert_color=True, empty_square='.'))
+        if board.print_unicode:
+            # Print a unicode board
+            print(board.unicode(invert_color=True, empty_square='.'))
+        else:
+            # Print an ASCII board
+            print(board)
         print()
 
 
@@ -265,9 +268,9 @@ def process_output_actions(raw_output_actions, max_section_end=0):
     return output_actions
 
 
-def main(input_filename, raw_output_actions, debug, html_output):
+def main(input_filename, raw_output_actions, debug, print_unicode, html_output):
     if input_filename.endswith('.pgn'):
-        board = TwoMoveChessBoard(None, debug, html_output)
+        board = TwoMoveChessBoard(None, debug, print_unicode, html_output)
         player_turns = read_pgn(input_filename)
         output_actions = process_output_actions(raw_output_actions, len(player_turns) + 1)
         section_start = 0
@@ -278,7 +281,7 @@ def main(input_filename, raw_output_actions, debug, html_output):
     elif input_filename.endswith('.fen'):
         with open(input_filename) as input_file:
             fen = input_file.readline()
-        board = TwoMoveChessBoard(fen)
+        board = TwoMoveChessBoard(fen, print_unicode=print_unicode)
         output_actions = process_output_actions(raw_output_actions)
         if output_actions[0][1] is not None:
             print_board(board, output_actions[0][1])
@@ -295,7 +298,8 @@ if __name__ == '__main__':
         '-o', '--output', default=[], action='append', help='output turn number, OR output turn number:output filename'
     )
     parser.add_argument('-d', '--debug', action='store_true', help='Debug mode')
+    parser.add_argument('-u', '--unicode', action='store_true', help='Use unicode when printing board to screen')
     parser.add_argument('--html', action='store_true', help='Print game in an HTML table')
     args = parser.parse_args()
 
-    main(args.file, args.output, args.debug, args.html)
+    main(args.file, args.output, args.debug, args.unicode, args.html)

@@ -1,3 +1,6 @@
+"""
+This script verifies that exceptions are thrown for rules violations.
+"""
 from argparse import ArgumentParser
 from glob import glob
 
