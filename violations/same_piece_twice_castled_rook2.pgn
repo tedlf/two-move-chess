@@ -1,0 +1,7 @@
+[Event "You cannot move the same piece twice in one turn, including the rook after castling."]
+[Round "Queenside white castling"]
+
+1.d4         d5,Nf6
+2.Bg5,Nc3    g6,Bg7
+3.Qd2,e3     O-O,Nc6
+4.O-O-O,Re1  *

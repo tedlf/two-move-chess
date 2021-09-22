@@ -1,0 +1,4 @@
+[Event "A check cannot occur on the first move of a two move turn."]
+
+1.e4        c5,d6
+2.Bb5+,Nf3  *

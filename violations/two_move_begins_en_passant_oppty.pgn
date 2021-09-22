@@ -1,0 +1,4 @@
+[Event "A move that provides an en passant capture opportunity cannot be played on the first move of a two move turn."]
+
+1.d4    Nf6,c5 
+2.c4,d5 e5,d6  *

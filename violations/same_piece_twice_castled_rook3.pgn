@@ -1,0 +1,6 @@
+[Event "You cannot move the same piece twice in one turn, including the rook after castling."]
+[Round "Kingside black castling"]
+
+1.e4       e5,Nf6
+2.d3,Nc3   Bb4,Nc6
+3.Bd2,Be2  O-O,Re8  *

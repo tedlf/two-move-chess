@@ -1,0 +1,7 @@
+[Event "A pawn promotion cannot occur on the first move of a two move turn."]
+
+1.h4         a6,b6
+2.h5,g3      c6,d6
+3.h6,g4      e6,f6
+4.hxg7       a5
+5.gxh8=Q,a3  *
