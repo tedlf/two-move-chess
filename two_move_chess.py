@@ -3,12 +3,13 @@ This Python module extends the "Board" class of the python-chess module
 (https://pypi.org/project/chess/) to conform to the rules of Two Move Chess
 (https://www.chessvariants.com/invention/two-move-chess).
 
-This module reads and validates a modified PGN file that contains a game
-of Two Move Chess. It can also read a FEN file and display that board position.
-Board positions can be written to SVG files or as text to the terminal. 
+When run as a script, this module reads and validates a modified PGN file that
+contains a game of Two Move Chess. It can also read a FEN file and display
+that board position. Board positions can be written to SVG files or as text
+to the terminal.
 
 Example input files are in the "examples" directory, and the shell scripts
-example1.zsh, etc. in this directory contain examples of usage. 
+example1.zsh, etc. in this directory contain examples of usage.
 
 The directory "violations" contains examples of games that violate the rules
 of Two Move Chess. The script "run_violation_tests.py" validates that those
@@ -116,7 +117,7 @@ class TwoMoveChessBoard(chess.Board):
 
     def play(self, turns):
         """
-        Play the sequence of "turns". An excption will be thrown if any turn
+        Play the sequence of "turns". An exception will be thrown if any turn
         is not a legal Two Move Chess turn.
         """
         html_turn_data = []
@@ -191,9 +192,9 @@ def table_row(turn_number, turn):
 
 def read_pgn(input_filename):
     """
-    Read a PGN file for a game of Two Move Chess. The file format is more
-    restrictive than that of a PGN file for international chess. Each turn
-    must be on a separate line. Double moves are separated by a comma.
+    Read a PGN file for a game of Two Move Chess. The file format is nearly the
+    same as that of a PGN file for international chess. The moves of a two move turn
+    are separated by a comma.
     """
     turn_pattern = re.compile(r'\d+\.(.*)')
     with open(input_filename) as input_file:
@@ -283,10 +284,7 @@ def main(input_filename, raw_output_actions, debug, print_unicode, html_output):
             fen = input_file.readline()
         board = TwoMoveChessBoard(fen, print_unicode=print_unicode)
         output_actions = process_output_actions(raw_output_actions)
-        if output_actions[0][1] is not None:
-            print_board(board, output_actions[0][1])
-        else:
-            print_board(board)
+        print_board(board, output_actions[0][1])
     else:
         raise Exception(f'Input file name does not end in ".pgn" or ".fen": {input_filename}')
 

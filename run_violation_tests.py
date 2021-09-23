@@ -10,7 +10,7 @@ import two_move_chess
 def main(verbose):
     for violation_filename in sorted(glob('violations/*.pgn')):
         try:
-            two_move_chess.main(violation_filename, [], None, False)
+            two_move_chess.main(violation_filename, [], False, False, False)
         except Exception as error:
             if verbose:
                 print(violation_filename)
