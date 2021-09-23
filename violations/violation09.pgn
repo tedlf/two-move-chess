@@ -1,4 +1,3 @@
 [Event "A move that does not meet one of the criteria for a single move turn cannot be played in a single move turn."]
 
-1.d4   c5,Nc6
-2.Nf3  *
+1.d4   d5 *
