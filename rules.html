@@ -4,365 +4,367 @@
     <title>Two Move Chess</title>
     <style>
       body {
-          font-family: Verdana, sans-serif;
+        font-family: Verdana, sans-serif;
+        font-size: 18px;
+      }
+      h1 {
+        text-align: center;
+      }
+      table, th, td {
+        border: 0;
+      }
+      th, td {
+        padding-right: 24px;
       }
     </style>
   </head>
   <body>
-    <blockquote>
-      <blockquote>
-        <blockquote>
-          <blockquote>
-            <blockquote>
-              <center><h1>Two Move Chess</h1></center>
-              <h2><strong>Introduction</strong>
-              </h2>
-              <hr>
-              <p>In <a href="https://www.chessvariants.com/d.chess/chess.html">international chess</a> it is widely recognized that the player with the white piecese has a slight <a href="https://en.wikipedia.org/wiki/First-move_advantage_in_chess">first-move advantage</a>. On her move, the player with the white pieces surveys a board where each player has made the same number of moves. By contrast, on his move the player with the black pieces faces a board where he is always one move behind his opponent.
-              </p>
-              <p>Two Move Chess (also written &quot;2 Move Chess&quot;) is designed to remedy White's first move advantage in a manner similar to <a href="https://www.chessvariants.com/multimove.dir/marseill.html">Balanced Marseillais Chess</a> and <a href="https://www.chessvariants.com/multimove.dir/doublemove.html">Doublemove Chess</a>, while adhering more closely to the play of international chess.
-              </p>
-              <h2><strong>Design</strong>
-              </h2>
-              <hr>
-              <p>The general idea of Two Move Chess is for White to begin with a single move, and for players to take turns of two moves from then on. On each turn after the first, each player is therefore able to catch up and then surpass her opponent in terms of the number of moves played. Players cannot move the same piece twice in a turn, to prevent overly powerful turns such as moving the queen twice. Each move must be legal according to the rules of international chess, which immediately brings up the question of how play could continue if the first move of a two move turn comes with check. In Two Move Chess, this is solved by ending that player's turn after that single move, and allowing his opponent to make a single move in response before the game continues. An <em>en passant</em> capture opportunity is handled in the same way, so that the capture opportunity is not lost. Moves that capture a piece or promote a pawn are also allowed a response, in order to keep the flow of the game as close as possible to international chess.
-              </p>
-
-              <h2>Setup</h2>
-              <hr>
-              <p>The board, pieces, and starting position for Two Move Chess are the same as in international chess. The rules could also be easily adapted to <a href="https://en.wikipedia.org/wiki/Fischer_random_chess">Chess960</a> and other chess variants.
-              </p>
-
-              <h2>Pieces</h2>
-              <hr>
-              <p>The pieces in Two Move Chess are exactly the same as in international chess.
-              </p>
-
-              <h2>Rules</h2>
-              <hr>
-              <ol>
-                <li>The board, pieces and starting position in Two Move Chess are the same as in international chess.</li>
-                <li>White begins the game with a single move. From then on, each player makes either one or two moves per turn as described below. Each of these moves must be individually legal according to the rules of international chess for the position on the board at the moment it is played. That is, two positions are evaluated on a two move turn. Note that the terms <strong>turn</strong> and <strong>move</strong> are not interchangeable--a <strong>move</strong> refers to a legal move in international chess, while a <strong>turn</strong> may consist of a <strong>two move</strong> turn, a <strong>single move</strong> turn, or a <strong>response move</strong> turn, as defined below.</li>
-                <li><strong>Two move turn</strong>: When taking a two move turn, a player cannot move a piece twice. For example, if a player castles on the first move of a two move turn, she cannot move either the king or castling rook on the second move of that turn. Also, the first move of a two move turn cannot be one that satisfies any of the criteria for a <strong>single move</strong> turn (defined in rule #4).</li>
-                <li><strong>Single move turn</strong>: If a player is not taking a <strong>response move</strong> turn (defined in rule #5) and he begins his turn with a move satisfying any of these conditions, it becomes a <strong>single move</strong> turn and there is no second move on that turn:
-                  <ul>
-                    <li>The move places the opponent in check (or checkmate)</li>
-                    <li>The move provides an opportunity for an <em>en passant</em> capture</li>
-                    <li>The move captures an opponent&#39;s piece</li>
-                    <li>The move promotes a pawn</li>
-                  </ul>
-                </li>
-                <li><strong>Response move turn</strong>: After a player has made a single move, her opponent immediately also takes a turn with a single move (unless the game has ended in checkmate). This turn, known as a <strong>response move</strong> turn, does not itself cause the next turn to be a response move turn even if it meets one of the criteria above.</li>
-                <li>Check and checkmate are evaluated exactly as in international chess for each position on the board.</li>
-                <li>The game ends in stalemate if at the start of his turn a player is not in check and he cannot complete a legal <strong>turn</strong>. There are two situations to consider:
-                  <ul>
-                    <li>If his opponent has just taken a single move turn, then it is stalemate if he is not in check and he has no available legal moves.</li>
-                    <li>If his opponent has not just taken a single move turn, then it is stalemate if he is not in check and he has no available two move turns and no available single move turns.</li>
-                  </ul>
-                </li>
-                <li>Because each move of a two move turn must be legal according to the rules of international chess, a player who is in check must escape from check on the next move--if she is taking a two move turn this must occur on the first move of her turn. Likewise, if a player has an opportunity to capture an opponent&#39;s pawn <em>en passant</em>, the pawn can only be captured on the next move. It cannot occur on the second move of a two move turn.</li>
-                <li>Every board position that has occurred in a game is considered in determining a draw by threefold repetition or fivefold repetition, including positions that occur after the first move of a two move turn. In addition to the conditions for equivalence used in international chess, positions in Two Move Chess are only considered the same if they occur when if it is the same player&#39;s turn and that player has the same move options (there are three distinct possibilities: it is the beginning of a turn that is not a response move turn, it is half way through a two move turn, or it is a response move turn).</li>
-                <li>The Fifty move and Seventy-five move rules of international chess are replaced by a Fifty <strong>turn</strong> rule and a 75 <strong>turn</strong> rule, noting again that the terms <strong>turn</strong> and <strong>move</strong> are not equivalent in Two Move Chess.</li>
-                <li>When recording a game, a two move turn must be distinguished from the moves of the other player. If using standard algebraic notation, which uses white space to separate moves by different players on the same turn, a comma may be used to separate the two moves of a two move turn, for example &quot;Nf6,d5.&quot;</li>
-                <li>While learning to play Two Move Chess, players may agree to verbally announce &quot;single move&quot; and &quot;response&quot; while taking single move and response move turns, in a manner similar to the verbal announcement of &quot;check&quot; that beginners often agree to make when learning to play international chess.</li>
-              </ol>
-
-              <h2>Notes</h2>
-              <hr>
-              <p>In Two Move Chess, each player usually begins his turn facing a board where he has made one less move than his opponent and ends it having made one more move than his opponent. When taking a single move turn, he instead chooses to catch up to his opponent in the number of moves taken. After the response move turn, he again faces a board where he has made one less move than his opponent. This situation is maintained for each player throughout the game, providing a balance between the players in terms of the number of moves taken that does not exist in international chess.
-              </p>
-              <p>In the following examples, single moves are shown in <strong>bold</strong> text and response moves are shown in <em><strong>bold italics</strong></em>. By convention, the first move by White can be considered a response move. The moves of a two move turn are recorded in standard notation, separated by a comma.
-              </p>
-              <p><strong>Example 1 </strong>
-              </p>
-              <p>In this example, White makes a single move that places Black in check, and Black blocks the check with a response move.
-              </p>
-              <table border="0" cellpadding="1" cellspacing="1" style="width:75px">
-                <tbody>
-                  <tr>
-                    <td>1.<em><strong>e4</strong></em>
-                    </td>
-                    <td>c5,d6
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2.<strong>Bb5+</strong>
-                    </td>
-                    <td><em><strong>Nd7</strong></em>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p><img alt="Example1" src="images/example1.svg" style="height:400px; width:400px" />
-              </p>
-              <p><strong>Example 2 </strong>
-              </p>
-              <p>In most situations where a player contemplates a single move turn, she has the strategic choice of either taking a single move turn or taking a two move turn in which the second move is the move she considered for a single move turn. This example illustrates this choice. It is nearly the same as Example 1, except that White places Black in check on the second move of a two move turn.
-              </p>
-              <table border="0" cellpadding="1" cellspacing="1" style="width:75px">
-                <tbody>
-                  <tr>
-                    <td>1.<em><strong>e4</strong></em>
-                    </td>
-                    <td>c5,d6
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2.Nf3,Bb5+
-                    </td>
-                    <td>Nd7,Nf6
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p><img alt="Example2" src="images/example2.svg" style="height:400px; width:400px" />
-              </p>
-              <p><strong>Example 3 </strong>
-              </p>
-              <p>In this example Black makes a single move that provides an <em>en passant</em> capture opportunity. In this case, White does not capture <em>en passant</em> in his response move.
-              </p>
-              <table border="0" cellpadding="1" cellspacing="1" style="width:75px">
-                <tbody>
-                  <tr>
-                    <td>1.<em><strong>d4</strong></em>
-                    </td>
-                    <td>Nf6,c5
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2.c4,d5
-                    </td>
-                    <td><strong>e5</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3.<em><strong>Nc3</strong></em>
-                    </td>
-                    <td>&nbsp;
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p><img alt="Example3" src="images/example3.svg" style="height:400px; width:400px" />
-              </p>
-              <p><strong>Example 4 </strong>
-              </p>
-              <p>In this example it is White&#39;s turn and Black has not just taken a single move turn. The game ends in stalemate because White is not in check and cannot complete either a double move turn or a single move turn. There is no possible double move turn since the only piece that can move is the king, and a piece cannot be moved twice in one turn. There are also no possible single move turns because no pieces can be captured and there are no checks to be revealed by moving the king.
-              </p>
-              <p><img alt="Example4" src="images/example4.svg" style="height:400px; width:400px" />
-              </p>
-              <p><strong>Example 5 </strong>
-              </p>
-              <p>Here is an entire game of Two Move Chess. This game is based on the game played by Fabiano Caruana and Magnus Carlsen in the <a href="https://en.wikipedia.org/wiki/World_Chess_Championship_2018#Game_3:_Caruana%E2%80%93Carlsen,_%C2%BD%E2%80%93%C2%BD">third round of the World Chess Championship 2018 match</a> on 2018-11-12. The move order has been changed in a number of places from the original game in order to construct a legal game of Two Move Chess. Although players of this caliber would certainly have made many different strategic and tactical choices if they had actually been playing Two Move Chess, this example illustrates that Two Move Chess is similar to international chess even while providing a more balanced game.
-              </p>
-              <table border="0" cellpadding="1" cellspacing="1" style="width:75px">
-                <tbody>
-                  <tr>
-                    <td>1.<em><strong>e4</strong></em>
-                    </td>
-                    <td>c5,Nc6
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2.Nf3,Bb5
-                    </td>
-                    <td>g6,Bg7
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3.<strong>Bxc6</strong>
-                    </td>
-                    <td><em><strong>dxc6</strong></em>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4.d3,O-O
-                    </td>
-                    <td>Qc7,e5
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5.Re1,a3
-                    </td>
-                    <td>Nf6,O-O
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>6.b4,Nbd2
-                    </td>
-                    <td>Bg4,cxb4
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>7.h3,axb4
-                    </td>
-                    <td><strong>Bxf3</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>8.<em><strong>Nxf3</strong></em>
-                    </td>
-                    <td>a5,Nd7
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p><img alt="Example5a" src="images/example5a.svg" style="height:400px; width:400px" />
-              </p>
-              <table border="0" cellpadding="1" cellspacing="1" style="width:75px">
-                <tbody>
-                  <tr>
-                    <td>9.<strong>bxa5</strong>
-                    </td>
-                    <td><em><strong>Rxa5</strong></em>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10.Bd2,Qb1
-                    </td>
-                    <td>Raa8,Rfe8
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>11.Qb4,Bc3
-                    </td>
-                    <td>b5,f6
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12.<strong>Rxa8</strong>
-                    </td>
-                    <td><em><strong>Rxa8</strong></em>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>13.Ra1,Kf1
-                    </td>
-                    <td><strong>Rxa1+</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>14.<em><strong>Bxa1</strong></em>
-                    </td>
-                    <td>Qa7,Kf7
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>15.Bc3,Ke2
-                    </td>
-                    <td>Qa2,Bf8
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>16.Qb2,g3
-                    </td>
-                    <td><strong>Qxb2</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>17.<em><strong>Bxb2</strong></em>
-                    </td>
-                    <td>Nc5,h5
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>18.Bc3,Nd2
-                    </td>
-                    <td>Ne6,Bd6
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>19.Nb3,Bd2
-                    </td>
-                    <td>Ng5,c5
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>20.h4,c3
-                    </td>
-                    <td>Ne6,Ke7
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p><img alt="Example5b" src="images/example5b.svg" style="height:400px; width:400px" />
-              </p>
-              <table border="0" cellpadding="1" cellspacing="1" style="width:75px">
-                <tbody>
-                  <tr>
-                    <td>21.Be3,Kd1
-                    </td>
-                    <td>Kd7,f5
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>22.Kc2,Nd2
-                    </td>
-                    <td><strong>fxe4</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>23.<em><strong>dxe4</strong></em>
-                    </td>
-                    <td>c4,Nc5
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>24.Kd1,Bxc5
-                    </td>
-                    <td><strong>Bxc5</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>25.<em><strong>Ke2</strong></em>
-                    </td>
-                    <td>Kc6,b4
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>26.<strong>cxb4</strong>
-                    </td>
-                    <td><em><strong>Bxb4</strong></em>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>27.Nf1,f4
-                    </td>
-                    <td>Kc5,exf4
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>28.<strong>gxf4</strong>
-                    </td>
-                    <td><em><strong>Ba5</strong></em>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>29.Ne3,f5
-                    </td>
-                    <td><strong>gxf5</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>30.<em><strong>Nxc4</strong></em>
-                    </td>
-                    <td><strong>Kxc4</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>31.<em><strong>exf5</strong></em>
-                    </td>
-                    <td>&frac12; &ndash; &frac12;
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p><img alt="Example5c" src="images/example5c.svg" style="height:400px; width:400px" />
-              </p>
-            </blockquote>
-          </blockquote>
-        </blockquote>
-      </blockquote>
-    </blockquote>
-</body>
+    <blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote>
+      <h1>Two Move Chess</h1>
+      <h2><strong>Link to chessvariants.com</strong>
+      </h2>
+      <hr>
+      <p>These rules for the chess variant <strong>Two Move Chess</strong> can also be found at <a href="https://www.chessvariants.com/invention/two-move-chess">https://www.chessvariants.com/invention/two-move-chess</a>.
+      <h2><strong>Introduction</strong>
+      </h2>
+      <hr>
+      <p>In <a href="https://www.chessvariants.com/d.chess/chess.html">international chess</a> it is widely recognized that the player with the white piecese has a slight <a href="https://en.wikipedia.org/wiki/First-move_advantage_in_chess">first-move advantage</a>. On her move, the player with the white pieces surveys a board where each player has made the same number of moves. By contrast, on his move the player with the black pieces faces a board where he is always one move behind his opponent.
+      </p>
+      <p>Two Move Chess (also written &quot;2 Move Chess&quot;) is designed to remedy White's first move advantage in a manner similar to <a href="https://www.chessvariants.com/multimove.dir/marseill.html">Balanced Marseillais Chess</a> and <a href="https://www.chessvariants.com/multimove.dir/doublemove.html">Doublemove Chess</a>, while adhering more closely to the play of international chess.
+      </p>
+      <h2><strong>Design</strong>
+      </h2>
+      <hr>
+      <p>The general idea of Two Move Chess is for White to begin with a single move, and for players to take turns of two moves from then on. On each turn after the first, each player is therefore able to catch up and then surpass her opponent in terms of the number of moves played. Players cannot move the same piece twice in a turn, to prevent overly powerful turns such as moving the queen twice. Each move must be legal according to the rules of international chess, which immediately brings up the question of how play could continue if the first move of a two move turn comes with check. In Two Move Chess, this is solved by ending that player's turn after that single move, and allowing his opponent to make a single move in response before the game continues. An <em>en passant</em> capture opportunity is handled in the same way, so that the capture opportunity is not lost. Moves that capture a piece or promote a pawn are also allowed a response, in order to keep the flow of the game as close as possible to international chess.
+      </p>
+      <h2>Setup</h2>
+      <hr>
+      <p>The board, pieces, and starting position for Two Move Chess are the same as in international chess. The rules could also be easily adapted to <a href="https://en.wikipedia.org/wiki/Fischer_random_chess">Chess960</a> and other chess variants.
+      </p>
+      <h2>Pieces</h2>
+      <hr>
+      <p>The pieces in Two Move Chess are exactly the same as in international chess.
+      </p>
+      <h2>Rules</h2>
+      <hr>
+      <ol>
+        <li>The board, pieces and starting position in Two Move Chess are the same as in international chess.</li>
+        <li>White begins the game with a single move. From then on, each player makes either one or two moves per turn as described below. Each of these moves must be individually legal according to the rules of international chess for the position on the board at the moment it is played. That is, two positions are evaluated on a two move turn. Note that the terms <strong>turn</strong> and <strong>move</strong> are not interchangeable--a <strong>move</strong> refers to a legal move in international chess, while a <strong>turn</strong> may consist of a <strong>two move</strong> turn, a <strong>single move</strong> turn, or a <strong>response move</strong> turn, as defined below.</li>
+        <li><strong>Two move turn</strong>: When taking a two move turn, a player cannot move a piece twice. For example, if a player castles on the first move of a two move turn, she cannot move either the king or castling rook on the second move of that turn. Also, the first move of a two move turn cannot be one that satisfies any of the criteria for a <strong>single move</strong> turn (defined in rule #4).</li>
+        <li><strong>Single move turn</strong>: If a player is not taking a <strong>response move</strong> turn (defined in rule #5) and he begins his turn with a move satisfying any of these conditions, it becomes a <strong>single move</strong> turn and there is no second move on that turn:
+          <ul>
+            <li>The move places the opponent in check (or checkmate)</li>
+            <li>The move provides an opportunity for an <em>en passant</em> capture</li>
+            <li>The move captures an opponent&#39;s piece</li>
+            <li>The move promotes a pawn</li>
+          </ul>
+        </li>
+        <li><strong>Response move turn</strong>: After a player has made a single move, her opponent immediately also takes a turn with a single move (unless the game has ended in checkmate). This turn, known as a <strong>response move</strong> turn, does not itself cause the next turn to be a response move turn even if it meets one of the criteria above.</li>
+        <li>Check and checkmate are evaluated exactly as in international chess for each position on the board.</li>
+        <li>The game ends in stalemate if at the start of his turn a player is not in check and he cannot complete a legal <strong>turn</strong>. There are two situations to consider:
+          <ul>
+            <li>If his opponent has just taken a single move turn, then it is stalemate if he is not in check and he has no available legal moves.</li>
+            <li>If his opponent has not just taken a single move turn, then it is stalemate if he is not in check and he has no available two move turns and no available single move turns.</li>
+          </ul>
+        </li>
+        <li>Because each move of a two move turn must be legal according to the rules of international chess, a player who is in check must escape from check on the next move--if she is taking a two move turn this must occur on the first move of her turn. Likewise, if a player has an opportunity to capture an opponent&#39;s pawn <em>en passant</em>, the pawn can only be captured on the next move. It cannot occur on the second move of a two move turn.</li>
+        <li>Every board position that has occurred in a game is considered in determining a draw by threefold repetition or fivefold repetition, including positions that occur after the first move of a two move turn. In addition to the conditions for equivalence used in international chess, positions in Two Move Chess are only considered the same if they occur when if it is the same player&#39;s turn and that player has the same move options (there are three distinct possibilities: it is the beginning of a turn that is not a response move turn, it is half way through a two move turn, or it is a response move turn).</li>
+        <li>The Fifty move and Seventy-five move rules of international chess are replaced by a Fifty <strong>turn</strong> rule and a 75 <strong>turn</strong> rule, noting again that the terms <strong>turn</strong> and <strong>move</strong> are not equivalent in Two Move Chess.</li>
+        <li>When recording a game, a two move turn must be distinguished from the moves of the other player. If using standard algebraic notation, which uses white space to separate moves by different players on the same turn, a comma may be used to separate the two moves of a two move turn, for example &quot;Nf6,d5.&quot;</li>
+        <li>While learning to play Two Move Chess, players may agree to verbally announce &quot;single move&quot; and &quot;response&quot; while taking single move and response move turns, in a manner similar to the verbal announcement of &quot;check&quot; that beginners often agree to make when learning to play international chess.</li>
+      </ol>
+      <h2>Notes</h2>
+      <hr>
+      <p>In Two Move Chess, each player usually begins his turn facing a board where he has made one less move than his opponent and ends it having made one more move than his opponent. When taking a single move turn, he instead chooses to catch up to his opponent in the number of moves taken. After the response move turn, he again faces a board where he has made one less move than his opponent. This situation is maintained for each player throughout the game, providing a balance between the players in terms of the number of moves taken that does not exist in international chess.
+      </p>
+      <p>In the following examples, single moves are shown in <strong>bold</strong> text and response moves are shown in <em><strong>bold italics</strong></em>. By convention, the first move by White can be considered a response move. The moves of a two move turn are recorded in standard notation, separated by a comma.
+      </p>
+      <p><strong>Example 1 </strong>
+      </p>
+      <p>In this example, White makes a single move that places Black in check, and Black blocks the check with a response move.
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>1.<em><strong>e4</strong></em>
+            </td>
+            <td>c5,d6
+            </td>
+          </tr>
+          <tr>
+            <td>2.<strong>Bb5+</strong>
+            </td>
+            <td><em><strong>Nd7</strong></em>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><img alt="Example1" src="images/example1.svg" style="height:400px; width:400px" />
+      </p>
+      <p><strong>Example 2 </strong>
+      </p>
+      <p>In most situations where a player contemplates a single move turn, she has the strategic choice of either taking a single move turn or taking a two move turn in which the second move is the move she considered for a single move turn. This example illustrates this choice. It is nearly the same as Example 1, except that White places Black in check on the second move of a two move turn.
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>1.<em><strong>e4</strong></em>
+            </td>
+            <td>c5,d6
+            </td>
+          </tr>
+          <tr>
+            <td>2.Nf3,Bb5+
+            </td>
+            <td>Nd7,Nf6
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><img alt="Example2" src="images/example2.svg" style="height:400px; width:400px" />
+      </p>
+      <p><strong>Example 3 </strong>
+      </p>
+      <p>In this example Black makes a single move that provides an <em>en passant</em> capture opportunity. In this case, White does not capture <em>en passant</em> in his response move.
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>1.<em><strong>d4</strong></em>
+            </td>
+            <td>Nf6,c5
+            </td>
+          </tr>
+          <tr>
+            <td>2.c4,d5
+            </td>
+            <td><strong>e5</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>3.<em><strong>Nc3</strong></em>
+            </td>
+            <td>&nbsp;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><img alt="Example3" src="images/example3.svg" style="height:400px; width:400px" />
+      </p>
+      <p><strong>Example 4 </strong>
+      </p>
+      <p>In this example it is White&#39;s turn and Black has not just taken a single move turn. The game ends in stalemate because White is not in check and cannot complete either a double move turn or a single move turn. There is no possible double move turn since the only piece that can move is the king, and a piece cannot be moved twice in one turn. There are also no possible single move turns because no pieces can be captured and there are no checks to be revealed by moving the king.
+      </p>
+      <p><img alt="Example4" src="images/example4.svg" style="height:400px; width:400px" />
+      </p>
+      <p><strong>Example 5 </strong>
+      </p>
+      <p>Here is an entire game of Two Move Chess. This game is based on the game played by Fabiano Caruana and Magnus Carlsen in the <a href="https://en.wikipedia.org/wiki/World_Chess_Championship_2018#Game_3:_Caruana%E2%80%93Carlsen,_%C2%BD%E2%80%93%C2%BD">third round of the World Chess Championship 2018 match</a> on 2018-11-12. The move order has been changed in a number of places from the original game in order to construct a legal game of Two Move Chess. Although players of this caliber would certainly have made many different strategic and tactical choices if they had actually been playing Two Move Chess, this example illustrates that Two Move Chess is similar to international chess even while providing a more balanced game.
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>1.<em><strong>e4</strong></em>
+            </td>
+            <td>c5,Nc6
+            </td>
+          </tr>
+          <tr>
+            <td>2.Nf3,Bb5
+            </td>
+            <td>g6,Bg7
+            </td>
+          </tr>
+          <tr>
+            <td>3.<strong>Bxc6</strong>
+            </td>
+            <td><em><strong>dxc6</strong></em>
+            </td>
+          </tr>
+          <tr>
+            <td>4.d3,O-O
+            </td>
+            <td>Qc7,e5
+            </td>
+          </tr>
+          <tr>
+            <td>5.Re1,a3
+            </td>
+            <td>Nf6,O-O
+            </td>
+          </tr>
+          <tr>
+            <td>6.b4,Nbd2
+            </td>
+            <td>Bg4,cxb4
+            </td>
+          </tr>
+          <tr>
+            <td>7.h3,axb4
+            </td>
+            <td><strong>Bxf3</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>8.<em><strong>Nxf3</strong></em>
+            </td>
+            <td>a5,Nd7
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><img alt="Example5a" src="images/example5a.svg" style="height:400px; width:400px" />
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>9.<strong>bxa5</strong>
+            </td>
+            <td><em><strong>Rxa5</strong></em>
+            </td>
+          </tr>
+          <tr>
+            <td>10.Bd2,Qb1
+            </td>
+            <td>Raa8,Rfe8
+            </td>
+          </tr>
+          <tr>
+            <td>11.Qb4,Bc3
+            </td>
+            <td>b5,f6
+            </td>
+          </tr>
+          <tr>
+            <td>12.<strong>Rxa8</strong>
+            </td>
+            <td><em><strong>Rxa8</strong></em>
+            </td>
+          </tr>
+          <tr>
+            <td>13.Ra1,Kf1
+            </td>
+            <td><strong>Rxa1+</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>14.<em><strong>Bxa1</strong></em>
+            </td>
+            <td>Qa7,Kf7
+            </td>
+          </tr>
+          <tr>
+            <td>15.Bc3,Ke2
+            </td>
+            <td>Qa2,Bf8
+            </td>
+          </tr>
+          <tr>
+            <td>16.Qb2,g3
+            </td>
+            <td><strong>Qxb2</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>17.<em><strong>Bxb2</strong></em>
+            </td>
+            <td>Nc5,h5
+            </td>
+          </tr>
+          <tr>
+            <td>18.Bc3,Nd2
+            </td>
+            <td>Ne6,Bd6
+            </td>
+          </tr>
+          <tr>
+            <td>19.Nb3,Bd2
+            </td>
+            <td>Ng5,c5
+            </td>
+          </tr>
+          <tr>
+            <td>20.h4,c3
+            </td>
+            <td>Ne6,Ke7
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><img alt="Example5b" src="images/example5b.svg" style="height:400px; width:400px" />
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>21.Be3,Kd1
+            </td>
+            <td>Kd7,f5
+            </td>
+          </tr>
+          <tr>
+            <td>22.Kc2,Nd2
+            </td>
+            <td><strong>fxe4</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>23.<em><strong>dxe4</strong></em>
+            </td>
+            <td>c4,Nc5
+            </td>
+          </tr>
+          <tr>
+            <td>24.Kd1,Bxc5
+            </td>
+            <td><strong>Bxc5</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>25.<em><strong>Ke2</strong></em>
+            </td>
+            <td>Kc6,b4
+            </td>
+          </tr>
+          <tr>
+            <td>26.<strong>cxb4</strong>
+            </td>
+            <td><em><strong>Bxb4</strong></em>
+            </td>
+          </tr>
+          <tr>
+            <td>27.Nf1,f4
+            </td>
+            <td>Kc5,exf4
+            </td>
+          </tr>
+          <tr>
+            <td>28.<strong>gxf4</strong>
+            </td>
+            <td><em><strong>Ba5</strong></em>
+            </td>
+          </tr>
+          <tr>
+            <td>29.Ne3,f5
+            </td>
+            <td><strong>gxf5</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>30.<em><strong>Nxc4</strong></em>
+            </td>
+            <td><strong>Kxc4</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>31.<em><strong>exf5</strong></em>
+            </td>
+            <td>&frac12; &ndash; &frac12;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><img alt="Example5c" src="images/example5c.svg" style="height:400px; width:400px" />
+      </p>
+    </blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote>
+  </body>
 </html>
