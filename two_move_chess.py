@@ -5,7 +5,7 @@ This Python module extends the "Board" class of the python-chess module
 
 When run as a script, this module reads and validates a modified PGN file that
 contains a game of Two Move Chess. It can also read a FEN file and display
-that board position. Board positions can be written to SVG files or as text
+its board position. Board positions can be written to SVG files or as text
 to the terminal.
 
 Example input files are in the "examples" directory, and the shell scripts
