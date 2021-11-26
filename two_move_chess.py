@@ -1,5 +1,5 @@
 """
-This Python module extends the "Board" class of the python-chess module
+This Python module extends the |Board| class of the python-chess module
 (https://pypi.org/project/chess/) to conform to the rules of Two Move Chess
 (https://www.chessvariants.com/invention/two-move-chess).
 
@@ -58,7 +58,7 @@ HTML_STYLE = {
 
 class TwoMoveChessBoard(chess.Board):
     """
-    This class extends chess.Board for the purpose of verifying games of Two Move Chess.
+    This class extends |chess.Board| for the purpose of verifying games of Two Move Chess.
     """
 
     def __init__(self, fen=None, debug=False, print_unicode=False, html_output=False):
@@ -117,7 +117,7 @@ class TwoMoveChessBoard(chess.Board):
 
     def play(self, turns):
         """
-        Play the sequence of "turns". An exception will be thrown if any turn
+        Play the sequence of |turns|. An exception will be thrown if any turn
         is not a legal Two Move Chess turn.
         """
         html_turn_data = []
@@ -156,15 +156,15 @@ class TwoMoveChessBoard(chess.Board):
         raise NotImplementedError('This method has not been implemented yet for Two Move Chess')
 
     def can_claim_fifty_moves(self):
-        """ This method will be replaced by "can_claim_fifty_turns" in Two Move Chess. """
+        """ This method will be replaced by |can_claim_fifty_turns| in Two Move Chess. """
         raise NotImplementedError('This method has not been implemented yet for Two Move Chess')
 
     def is_fifty_moves(self):
-        """ This method will be replaced by "is_fifty_turns" in Two Move Chess. """
+        """ This method will be replaced by |is_fifty_turns| in Two Move Chess. """
         raise NotImplementedError('This method has not been implemented yet for Two Move Chess')
 
     def is_seventyfive_moves(self):
-        """ This method will be replaced by "is_seventyfive_turns" in Two Move Chess. """
+        """ This method will be replaced by |is_seventyfive_turns| in Two Move Chess. """
         raise NotImplementedError('This method has not been implemented yet for Two Move Chess')
 
 
@@ -178,7 +178,7 @@ def html_table(html_turn_data):
 
 
 def table_row(turn_number, turn):
-    """ Produce a row for the HTML table created by "html_table" for a single full turn. """
+    """ Produce a row for the HTML table created by |html_table| for a single full turn. """
     style = HTML_STYLE[turn[0][1]]
     row = ['    <tr>', f'      <td>{turn_number + 1}.{style[0]}{turn[0][0]}{style[1]}', '      </td>']
     if len(turn) == 2:
